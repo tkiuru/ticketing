@@ -23,7 +23,7 @@ export default ({ url, method, body, onSuccess }) => {
           </ul>
         </div>
       )
-e    }
+    }
   }
 
   return { doRequest, errors }
