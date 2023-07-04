@@ -13,9 +13,7 @@ const AppComponent = ({ Component, pageProps, currentUser }) => {
 
 AppComponent.getInitialProps = async (appContext) => {
   const client = buildClient(appContext.ctx)
-  const { data } = await client.get('/api/users/currentuser', {
-    headers: appContext.ctx.req.headers,
-  })
+  const { data } = await client.get('/api/users/currentuser')
 
   let pageProps = {}
   if (appContext.Component.getInitialProps) {
@@ -24,7 +22,7 @@ AppComponent.getInitialProps = async (appContext) => {
 
   return {
     pageProps,
-    currentUser: data.currentUser,
+    ...data,
   }
 }
 
