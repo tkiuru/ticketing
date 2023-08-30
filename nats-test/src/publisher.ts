@@ -4,7 +4,7 @@ import { TicketCreatedPublisher } from './events/ticket-created-publisher'
 console.clear()
 
 const stan = nats.connect('ticketing', 'asdf', {
-  url: 'http://localhost:4222',
+  url: 'http://nats-srv:4222',
 })
 
 stan.on('connect', async () => {
